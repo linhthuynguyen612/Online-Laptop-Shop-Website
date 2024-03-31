@@ -43,7 +43,7 @@
                                 <div class="col-md-6 col-12 mx-auto">
                                     <h3>Create a User</h3>
                                     <br>
-                                    <form:form class="row g-3" action="/admin/user/create" method="post" modelAttribute="newUser">
+                                    <form:form class="row g-3" action="/admin/user/create" method="post" modelAttribute="newUser" enctype="multipart/form-data">
                                         <div class="col-md-6 col-12 mb-3">
                                             <label class="form-label">Email:</label>
                                             <form:input type="email" class="form-control" path="email"/>
@@ -66,16 +66,16 @@
                                         </div>
                                         <div class="col-md-6 col-12 mb-3">
                                             <label class="form-label">Role:</label>
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Admin</option>
-                                                <option value="1">User</option>
+                                            <form:select class="form-select" path="role.name">
+                                                <form:option value="ADMIN">Admin</form:option>
+                                                <form:option value="USER">User</form:option>
                                                 
-                                              </select>
+                                              </form:select>
                                         </div>
                                         <div class="col-md-6 col-12 mb-3">
                 
                                             <label for="avatarFile" class="form-label">Avatar:</label>
-                                            <input class="form-control" type="file" id="avatarFile" accept=".png, .jpg, .jpeg">
+                                            <input class="form-control" type="file" id="avatarFile" accept=".png, .jpg, .jpeg" name="anhFile"/>
                                         </div>
                                         <div class="col-12 mb-3">
                                             <img alt="avatar preview" style="max-height: 250px; display: none;" id="avatarPreview" />

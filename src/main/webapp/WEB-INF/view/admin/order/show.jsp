@@ -1,6 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-        <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -11,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Dự án laptopshop" />
         <meta name="author" content="Linh" />
-        <title>Delete User</title>
+        <title>Dashboard</title>
         <link href="/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -23,30 +22,12 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Delete User</h1>
+                        <h1 class="mt-4">MangeOrders</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Users</li>
+                            <li class="breadcrumb-item active">Orders</li>
                         </ol>
-                        <div class="mt-5">
-                            <div class="row">
-                                <div class="col-12 mx-auto">
-                                    <h3>Delete the user with id: ${user.id}</h3>
-                                    <br>
-                                    <div class="alert alert-danger" role="alert">
-                                        Are you sure you want to delete this user?
-                                    </div>
-                                    <form:form method= "post" modelAttribute="newUser" action="/admin/user/delete">
-                                        <div class="mb-3" style="display: none">
-                                            <label class="form-label">ID:</label>
-                                            <form:input type="text" class="form-control" path="id"/>
-                                            
-                                        </div>
-                                        <button class="btn btn-danger mb-5">Confirm</button>
-                                    </form:form>
-                                </div>
-                            </div>
-                        </div>
+                        <div>Table order</div>
                     </div>
                 </main>
                 <jsp:include page="../layout/footer.jsp" />

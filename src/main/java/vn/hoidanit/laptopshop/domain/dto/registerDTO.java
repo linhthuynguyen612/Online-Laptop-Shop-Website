@@ -1,5 +1,8 @@
 package vn.hoidanit.laptopshop.domain.dto;
 
+import vn.hoidanit.laptopshop.service.validator.RegisterChecked;
+
+@RegisterChecked
 public class registerDTO {
     private String firstName;
     private String lastName;

@@ -11,10 +11,10 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import vn.hoidanit.laptopshop.service.validator.StrongPassword;
 
 import java.util.List;
 
@@ -27,17 +27,18 @@ public class User {
 
     @NotNull
     @Email
-    @Email(message = "Email is not valid", regexp =
+    @Email(message = "Email không hợp lệ", regexp =
     "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
-    @NotEmpty(message = "Email cannot be empty")
+    @NotEmpty(message = "Email không được để trống")
     private String email; 
 
     @NotNull
-    @Size(min=2, message = "Password must be at least 2 characters")
+    @Size(min=2, message = "Password phải tối thiểu 2 kí tự")
+    @StrongPassword(message = "Password phải có 8 kí tự")
     private String password;
     
     @NotNull
-    @Size(min=3, message = "Full name must be at least 3 characters")
+    @Size(min=3, message = "Fullname phải tối thiểu 3 kí tự")
     private String fullName;
     private String address;
     private String phone;

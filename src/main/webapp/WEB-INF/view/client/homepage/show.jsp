@@ -127,6 +127,7 @@
         </div>
     </div>
     <!-- Fruits Shop End-->
+    <jsp:include page="../layout/feature.jsp" />
 
     <!-- Footer Start -->
     <jsp:include page="../layout/footer.jsp" />

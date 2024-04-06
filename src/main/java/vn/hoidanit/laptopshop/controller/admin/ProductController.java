@@ -69,6 +69,8 @@ public class ProductController {
             return "admin/product/create";
         }
         //
+        
+
         String image= this.uploadService.handleSaveUploadFile(file, "product");
         product.setImage(image);
         this.productService.handleSaveProduct(product);

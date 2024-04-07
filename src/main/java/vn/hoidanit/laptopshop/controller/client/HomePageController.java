@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import vn.hoidanit.laptopshop.domain.Product;
 import vn.hoidanit.laptopshop.service.ProductService;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -27,6 +29,11 @@ public class HomePageController {
         List<Product> products = this.productService.getAllProducts();
         model.addAttribute("products", products);
         return "client/homepage/show";
+    }
+    
+    @GetMapping("/access-denied")
+    public String getAccessDenyPage() {
+        return "client/auth/deny";
     }
     
 }

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import vn.hoidanit.laptopshop.domain.Product;
 import vn.hoidanit.laptopshop.service.ProductService;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 
@@ -28,6 +27,8 @@ public class HomePageController {
     public String getHomePage(Model model) {
         List<Product> products = this.productService.getAllProducts();
         model.addAttribute("products", products);
+      
+  
         return "client/homepage/show";
     }
     

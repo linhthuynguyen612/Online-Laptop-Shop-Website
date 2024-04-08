@@ -1,6 +1,6 @@
 package vn.hoidanit.laptopshop.config;
 
-import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties.Authentication;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -75,7 +75,7 @@ public class SecurityConfiguration {
                     .maximumSessions(1)
                     .maxSessionsPreventsLogin(false))
 
-            .logout(logout->logout.deleteCookies("JSESSIONID").invalidateHttpSession(true))
+            //.logout(logout->logout.deleteCookies("JSESSIONID").invalidateHttpSession(true))
 
             .rememberMe(rememberMe -> rememberMe.rememberMeServices(rememberMeServices()))
 
